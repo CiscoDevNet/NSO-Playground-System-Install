@@ -52,7 +52,11 @@ Try the example below to get familiar with the Cloud IDE Environment. Copy or ty
 
 <img src="img/vscode_terminal.png" width="1000px" height="auto" alt="vscode terminal">
 
-Examples from the NSO example set run with a local installation of NSO, and the instructions below show how to run an example with an NSO system installation where NSO is already running. See the [NSO Getting Started Guide](https://developer.cisco.com/docs/nso/guides/#!developing-and-deploying-a-nano-service/development) and the README for the example for details. In addition, a container-based variant of the example is available in the [NSO-Developer repository](https://gitlab.com/nso-developer/nso-examples/-/tree/main/deployment/netsim-sshkey).
+Examples from the NSO example set `$NCS_DIR/examples.ncs` run with a local installation of NSO. The instructions below show how to run the example `netsim-sshkey` with an NSO system installation where NSO is already running.
+
+If you want to see a detailed explanation of the example below, see the [Developing and Deploying a Nano Service](https://developer.cisco.com/docs/nso/guides/#!developing-and-deploying-a-nano-service/development) guide and the README file located at `$NCS_DIR/examples.ncs/development-guide/nano-services/netsim-sshkey/` in NSO.
+
+In addition, a container-based variant of the example is available in the [NSO-Developer repository](https://gitlab.com/nso-developer/nso-examples/-/tree/main/deployment/netsim-sshkey).
 
 1. Build the packages and copy them to the NSO run-time directory.
 
