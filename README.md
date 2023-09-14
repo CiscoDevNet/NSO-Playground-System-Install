@@ -52,60 +52,100 @@ Try the example below to get familiar with the Cloud IDE Environment. Copy or ty
 
 <img src="img/vscode_terminal.png" width="1000px" height="auto" alt="vscode terminal">
 
-This short example will demonstrate how to set up a simulated network of Cisco IOS routers and manage these with NSO in Code Exchange Cloud IDE. NSO will talk Cisco CLI towards the routers.
+Examples from the NSO example set run with a local installation of NSO, and the instructions below show how to run an example with an NSO system installation where NSO is already running. See the [NSO Getting Started Guide](https://developer.cisco.com/docs/nso/guides/#!developing-and-deploying-a-nano-service/development) and the README for the example for details. In addition, a container-based variant of the example is available in the [NSO-Developer repository](https://gitlab.com/nso-developer/nso-examples/-/tree/main/deployment/netsim-sshkey).
 
-> If you want to see a detailed explanation of the commands below see [NSO Intro Learning Lab](https://developer.cisco.com/learning/labs/nso-intro/introduction/)
-
-1. Prepare NSO
+1. Build the packages and copy them to the NSO run-time directory.
 
    ```bash
-   source $NCS_DIR/ncsrc
-   ncs-netsim --dir ~/example/netsim create-network cisco-ios-cli-3.8 2 ios
-   ncs-setup --dest ~/example --netsim-dir ~/example/netsim
+   EXAMPLE_DIR=${NCS_DIR}/examples.ncs/development-guide/nano-services/netsim-sshkey
+   # Temporary fix pre-NSO 6.1.4
+   sed -i.orig -e "s|user\[service.local_user\]|user\[service.remote_name\]|" $EXAMPLE_DIR/packages/distkey/python/distkey/distkey_app.py
+   for f in $EXAMPLE_DIR/packages/*/src; do make -C $f all; done
+   cp -r $EXAMPLE_DIR/packages/* $NCS_RUN_DIR/packages/
    ```
 
-2. Start netsim
+2. Reload the packages using the `ncs_cmd` tool through the NSO Management Agent API (MAAPI).
 
    ```bash
-   cd ~/example/
+   ncs_cmd -dd -c 'maction "/packages/reload"'
+   ```
+
+3. Create, configure NSO, and start three simulated devices.
+
+   ```bash
+   ncs-netsim create-network $NCS_RUN_DIR/packages/ne 3 ex --dir ./netsim
+   ncs-netsim ncs-xml-init > devices_init.xml
    ncs-netsim start
    ```
 
-3. Start NSO
+4. Configure a default authgroup for the developer user.
 
    ```bash
-   ncs
+   echo "config; devices authgroups group default umap developer remote-name admin remote-password admin; commit" | ncs_cli -C -u developer -g ncsadmin
    ```
 
-4. Review NSO status
+5. Load the XML configuration files for device and service notification config using the `ncs_load` tool through NSO MAAPI.
 
    ```bash
-   ncs --version
-   ncs --status | grep -i status
+   ncs_load -dd -m -l devices_init.xml
+   ncs_load -dd -m -l $EXAMPLE_DIR/service_notif_init.xml
    ```
 
-5. Enter NSO and learn the configuration of `ios0`.
+6. Generate keys, distribute the public key, and configure NSO for public key authentication with the three network elements.
 
    ```bash
-   ncs_cli -C -u admin
+   ncs_cli -n -u developer -g ncsadmin -C << EOF
    devices sync-from
-   ```
-
-6. See the configuration of `ios0` and change the hostname.
-
-   ```bash
    config
-   show full-configuration devices device ios1 config | nomore
-   devices device ios0 config
-   ios:hostname nso.cisco.com
+   pubkey-dist key-auth ex0 developer remote-name admin authgroup-name default passphrase "GThunberg18!"
+   top pubkey-dist key-auth ex1 developer remote-name admin authgroup-name default passphrase "GThunberg18!"
+   top pubkey-dist key-auth ex2 developer remote-name admin authgroup-name default passphrase "GThunberg18!"
+   commit dry-run
+   commit
+   EOF
    ```
 
-7. Finally see what NSO will send to the device and commit the changes.
+7. Show the nano service plan status.
 
    ```bash
-   top
-   commit dry-run outformat native
+   echo "show pubkey-dist key-auth plan component | tab | nomore" | ncs_cli -C -u developer -g ncsadmin
+   ```
+
+8. Show the configuration added to NSO and network elements.
+
+   ```bash
+   ncs_cli -n -u developer -g ncsadmin -C << EOF
+   show running-config devices authgroups group umap developer
+   show running-config devices device authgroup
+   show running-config devices device config aaa authentication users user admin authkey | nomore
+   EOF
+   ```
+
+9. Show the generated private and public keys.
+
+   ```bash
+   cat $NCS_RUN_DIR/*ed25519*
+   ```
+
+10. Delete the nano service to revert to password-based network element authentication.
+
+   ```bash
+   ncs_cli -n -u developer -g ncsadmin -C << EOF
+   config
+   no pubkey-dist
+   commit dry-run
    commit
+   EOF
+   ```
+
+11. Show the restored configuration for password authentication.
+
+   ```bash
+   ncs_cli -n -u developer -g ncsadmin -C << EOF
+   show running-config devices authgroups group umap developer
+   show running-config devices device authgroup
+   show running-config devices device config aaa authentication users user admin authkey
+   EOF
    ```
 
 ### Explore and play with the NSO Example Collection
