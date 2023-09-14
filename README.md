@@ -108,7 +108,7 @@ Examples from the NSO example set run with a local installation of NSO, and the 
 7. Show the nano service plan status.
 
    ```bash
-   echo "show pubkey-dist key-auth plan component | tab | nomore" | ncs_cli -C -u developer -g ncsadmin
+   echo "show pubkey-dist key-auth plan component | tab | nomore" | ncs_cli -C -u developer -g ncsadmin
    ```
 
 8. Show the configuration added to NSO and network elements.
@@ -129,24 +129,24 @@ Examples from the NSO example set run with a local installation of NSO, and the 
 
 10. Delete the nano service to revert to password-based network element authentication.
 
-   ```bash
-   ncs_cli -n -u developer -g ncsadmin -C << EOF
-   config
-   no pubkey-dist
-   commit dry-run
-   commit
-   EOF
-   ```
+```bash
+ncs_cli -n -u developer -g ncsadmin -C << EOF
+config
+no pubkey-dist
+commit dry-run
+commit
+EOF
+```
 
 11. Show the restored configuration for password authentication.
 
-   ```bash
-   ncs_cli -n -u developer -g ncsadmin -C << EOF
-   show running-config devices authgroups group umap developer
-   show running-config devices device authgroup
-   show running-config devices device config aaa authentication users user admin authkey
-   EOF
-   ```
+```bash
+ncs_cli -n -u developer -g ncsadmin -C << EOF
+show running-config devices authgroups group umap developer
+show running-config devices device authgroup
+show running-config devices device config aaa authentication users user admin authkey
+EOF
+```
 
 ### Explore and play with the NSO Example Collection
 
