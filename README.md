@@ -181,8 +181,8 @@ drwxr-xr-x 1 developer ncsadmin    31 Jun 28 11:05 web-ui
 
 - Code shared is public, **avoid any confidential information.**
 - NSO Playground is designed for short "_How-to_" examples. Consider the following points when creating instructions:
-  - NSO Playground is **ephemeral**, any work not part of your remote Github repository will be lost.
-  - Containers offered have a lifespan of 2 hours. After 2 hours, you will be asked to start a new fresh session.
+  - NSO Playground is **ephemeral**, any work not part of your remote Github repository **will be lost.**
+  - The container offered have a **lifespan of 2 hours.** After 2 hours, the container is automatically destroyed.
   - If you need to work on NSO for a longer period of time, consider using a [free NSO evaluation copy](https://developer.cisco.com/docs/nso/#!getting-and-installing-nso/download-your-nso-free-trial-installer-and-cisco-neds) or [reserve a free DevNet sandbox.](https://developer.cisco.com/site/sandbox/)
 
 ## Recommendations
