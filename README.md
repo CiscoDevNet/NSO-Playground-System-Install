@@ -6,7 +6,7 @@ Explore and experiment with the world of NSO on Cisco Code Exchange, where you c
 
 But wait, there's more! You can also contribute your examples and share them with everyone. The best part is your peers can play with your examples without installing anything.
 
-If you are new to NSO, start with [NSO learning labs](https://developer.cisco.com/learning/search/?contentType=track,module,lab&keyword=nso&sortBy=luceneScore) where you will find step by step guides prepared by Cisco.
+If you are new to NSO, start with [NSO learning labs](https://developer.cisco.com/learning/search/?contentType=track,module,lab&keyword=nso&sortBy=luceneScore), where you will find step-by-step guides prepared by Cisco.
 
 ## Variants
 
@@ -18,7 +18,7 @@ The NSO Playground is available in **two** flavors, choose the environment that 
 
 See [this guide](https://developer.cisco.com/docs/nso/#!getting-and-installing-nso/local-vs-system-installation) to learn the difference between System and Local install.
 
-The rest of this guide focus on the System Install option.
+The rest of this guide focuses on the System Install option.
 
 ## Explore
 
@@ -36,8 +36,8 @@ Once you click the **Run in Cloud IDE** button, you will see a VS Code instance 
 
 ## How can I add my own example?
 
-1. Create an example you want to share on a public Github repository. Don't forget to add instructions.
-2. Specify the NSO variant (System/Local install) you want to use to your README.md file.
+1. Create an example you want to share on a public GitHub repository. Don't forget to add instructions.
+2. Specify the NSO variant (System/Local install) you want to use for your README.md file.
 3. Submit your repo on <https://developer.cisco.com/codeexchange/submit/>
 4. Once your submission is approved, your repository will be featured on the [Cisco Cloud IDE](https://developer.cisco.com/codeexchange/search/?complexity=devenv)
 5. That's it! Now you can start exploring, playing, and sharing your awesome examples. Let the creativity flow!
@@ -54,7 +54,7 @@ Try the example below to get familiar with the Cloud IDE Environment. Copy or ty
 
 Examples from the NSO example set `$NCS_DIR/examples.ncs` run with a local installation of NSO. The instructions below show how to run the example `netsim-sshkey` with an NSO system installation where NSO is already running.
 
-For detailed explanation see the getting started guide: [Developing and Deploying a Nano Service](https://developer.cisco.com/docs/nso/guides/#!developing-and-deploying-a-nano-service/development) and the README file in `$NCS_DIR/examples.ncs/development-guide/nano-services/netsim-sshkey/`
+For a detailed explanation see the getting started guide: [Developing and Deploying a Nano Service](https://developer.cisco.com/docs/nso/guides/#!developing-and-deploying-a-nano-service/development) and the README file in `$NCS_DIR/examples.ncs/development-guide/nano-services/netsim-sshkey/`
 
 In addition, a container-based variant of the example is available in the [NSO-Developer repository](https://gitlab.com/nso-developer/nso-examples/-/tree/main/deployment/netsim-sshkey).
 
@@ -177,24 +177,26 @@ drwxr-xr-x 1 developer ncsadmin    53 Jun 28 11:05 web-server-farm
 drwxr-xr-x 1 developer ncsadmin    31 Jun 28 11:05 web-ui
 ```
 
+**_NOTE:_**  The NSO examples target Local Install and need to modify them to run them on a System Install. See the [NSO Getting Started Guide](https://developer.cisco.com/docs/nso/guides/#!installation/modify-examples-for-system-install) for more details.
+
 ## Guidelines
 
 - Code shared is public, **avoid any confidential information.**
 - NSO Playground is designed for short "_How-to_" examples. Consider the following points when creating instructions:
-  - NSO Playground is **ephemeral**, any work not part of your remote Github repository **will be lost.**
-  - The container offered have a **lifespan of 2 hours.** After 2 hours, the container is automatically destroyed.
+  - NSO Playground is **ephemeral**. Any work not part of your remote Github repository **will be lost.**
+  - The container offered has a **lifespan of 2 hours.** After 2 hours, the container is automatically destroyed.
   - If you need to work on NSO for a longer period of time, consider using a [free NSO evaluation copy](https://developer.cisco.com/docs/nso/#!getting-and-installing-nso/download-your-nso-free-trial-installer-and-cisco-neds) or [reserve a free DevNet sandbox.](https://developer.cisco.com/site/sandbox/)
 
 ## Recommendations
 
-- Create examples with an "_Infrastructure as a Code_" mindset. This means, everything needed to create your examples is in your Github repository.
+- Create examples with an "_Infrastructure as a Code_" mindset. This means everything needed to create your examples is in your GitHub repository.
 - It is recommended to avoid specifying NSO versions in the code, as the underlying NSO will be upgraded with newer releases.
-- As seen in the examples use environment variables when developing.
+- As seen in the examples, use environment variables when developing.
   - `$NCS_DIR` is a handy environment variable.
   - Use `env | grep -i ncs` to see the environment variables available by `ncs`.
-- The directory structure of the workspace matters, consider it when creating an example.
+- The directory structure of the workspace matters. Consider it when creating an example.
 - Always add a README.md file to the root directory of your repository with instructions on how to setup or run your example.
-- Use the **preview** feature (right click) in VS Code to the see the markdown files formatted.
+- Use the **preview** feature (right click) in VS Code to see the markdown files formatted.
 
    <img src="img/preview_md.png" width="1000px" height="auto" alt="markdown file">
 
