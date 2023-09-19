@@ -177,7 +177,7 @@ drwxr-xr-x 1 developer ncsadmin    53 Jun 28 11:05 web-server-farm
 drwxr-xr-x 1 developer ncsadmin    31 Jun 28 11:05 web-ui
 ```
 
-**_NOTE:_**  The NSO examples target Local Install and need to modify them to run them on a System Install. See the [NSO Getting Started Guide](https://developer.cisco.com/docs/nso/guides/#!installation/modify-examples-for-system-install) for more details.
+**_NOTE:_**  The NSO examples target Local Install and must be modified to run on a System Install. See the [NSO Getting Started Guide](https://developer.cisco.com/docs/nso/guides/#!installation/modify-examples-for-system-install) for more details.
 
 ## Guidelines
 
