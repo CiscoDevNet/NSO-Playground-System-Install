@@ -177,15 +177,20 @@ drwxr-xr-x 1 developer ncsadmin    53 Jun 28 11:05 web-server-farm
 drwxr-xr-x 1 developer ncsadmin    31 Jun 28 11:05 web-ui
 ```
 
-**_NOTE:_**  The NSO examples target Local Install and must be modified to run on a System Install. See the [NSO Getting Started Guide](https://developer.cisco.com/docs/nso/guides/#!installation/modify-examples-for-system-install) for more details.
+**_NOTE:_** The NSO examples target Local Install and must be modified to run on a System Install. See the [NSO Getting Started Guide](https://developer.cisco.com/docs/nso/guides/#!installation/modify-examples-for-system-install) for more details.
 
 ## Guidelines
 
 - Code shared is public, **avoid any confidential information.**
 - NSO Playground is designed for short "_How-to_" examples. Consider the following points when creating instructions:
-  - NSO Playground is **ephemeral**. Any work not part of your remote Github repository **will be lost.**
-  - The container offered has a **lifespan of 2 hours.** After 2 hours, the container is automatically destroyed.
+  - The NSO Playground container is **ephemeral**. Any work not present in your remote GitHub repository **will be lost.**
+    - To save your work permanently, make sure to **merge** your changes in your remote GitHub repository.
+  - The container in the NSO Playground has a lifespan of **2 hours.** After 2 hours, the container will be automatically destroyed.
+    - You will be prompted to start a new session to continue working.
+    - Time starts the moment you access the URL of the NSO Playground environment.
   - If you need to work on NSO for a longer period of time, consider using a [free NSO evaluation copy](https://developer.cisco.com/docs/nso/#!getting-and-installing-nso/download-your-nso-free-trial-installer-and-cisco-neds) or [reserve a free DevNet sandbox.](https://developer.cisco.com/site/sandbox/)
+- Only one environment at a time can be used per user logged in Code Exchange.
+  - If you open multiple environments for the same user, Code Exchange will close the oldest environment.
 
 ## Recommendations
 
