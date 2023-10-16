@@ -20,7 +20,7 @@ With `nano` or `vi` edit the file `/etc/ncs/ncs.conf`
 </webui>
 ```
 
-Enable local authentication. You can omit this step if the user `admin` is present and has a password set.
+Enable local authentication still in the file `/etc/ncs/ncs.conf`. You can omit this step if the user `admin` is present and has a password set.
 
 > **Note:** If you are working with the official NSO container, [you can create the admin user with environment variables](https://developer.cisco.com/docs/nso/guides/#!running-nso-in-containers/administration)
 
