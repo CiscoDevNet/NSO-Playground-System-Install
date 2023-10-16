@@ -215,6 +215,10 @@ Go to [Cisco Code Exchange](https://developer.cisco.com/codeexchange/search/?com
 
 ## FAQ
 
+- Where is the NSO webUI?
+
+  - Follow the steps described on [Enable the NSO webUI](webui/README.md)
+
 - What NEDs come with the container?
 
   - Example NEDs. These should be considered as examples. NEDs in the container are only used to run the simulated networks. Do not use these with real devices.
@@ -239,8 +243,3 @@ Go to [Cisco Code Exchange](https://developer.cisco.com/codeexchange/search/?com
 - My code is approved and already published on Cisco Code Exchange, but I don't see it?
   - Expand the `/home/developer/src` in the workspace
   - or do `ls -l /home/developer/src`
-
-## Known Limitations
-
-- Accessing the WebUI through port forwarding does not work. While you can enable the WebUI and access the login screen, authentication will not be possible.
-  - This limitation is a result of port forwarding in VS Code and the `same-origin` CORS policy enforced by web browsers.
