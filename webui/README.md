@@ -65,9 +65,18 @@ config
 load merge src/NSO-Playground-System-Install/webui/webUI.cfg
 commit dry-run
 commit and-quit
+exit
 ```
 
 > **Note:** You can also do: `load merge terminal` then paste the contents of [webUI.cfg,](webUI.cfg) use `ctrl + d` to exit and commit the configuration pasted.
+
+#### CLI alternative
+
+Or you can load and merge the contents of the `webUI.cfg` file in one go using `ncs_load`
+
+```bash
+ncs_load -F c -lm ~/src/NSO-Playground-System-Install/webui/webUI.cfg
+```
 
 ### Access the webUI
 
