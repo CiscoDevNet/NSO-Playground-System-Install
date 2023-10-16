@@ -49,7 +49,7 @@ sed -i.backup -e "/<local-authentication>/{n;s|<enabled>false</enabled>|<enabled
 
 ### Reload NSO
 
-After finishing editing the `ncs.conf` file, restart the ncs deamon.
+After finishing editing the `ncs.conf` file, restart the ncs daemon.
 
 ```bash
 ncs --reload
@@ -69,7 +69,7 @@ commit and-quit
 
 > **Note:** You can also do: `load merge terminal` then paste the contents of [webUI.cfg,](webUI.cfg) use `ctrl + d` to exit and commit the configuration pasted.
 
-### Access the WebUI
+### Access the webUI
 
 Assuming you are using the default port 8080, the URL can be obtained through the `DEVENV_APP_8080_URL` environment variable in your terminal. The webUI default credentials are `admin/admin`
 
@@ -81,7 +81,7 @@ echo $DEVENV_APP_8080_URL
 
 <img src="../img/webui.png" width="1000px" height="auto" alt="webUI">
 
-If you are unsure of the port used, see the available envrionment variables with:
+If you are unsure of the port used, see the available environment variables with:
 
 ```bash
 env | grep -i devenv_app
