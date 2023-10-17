@@ -219,6 +219,14 @@ Go to [Cisco Code Exchange](https://developer.cisco.com/codeexchange/search/?com
 
   - Follow the steps described on [Enable the NSO webUI](webui/README.md)
 
+- Can I reset the environment?
+
+  - Yes, click on the reset button at the bottom-right corner. This will fully reset the container.
+
+      <img src="img/reset_button.png" width="100px" height="auto" alt="reset webUI">
+
+  - Be aware this will remove any work not saved on the remote GitHub repository.
+
 - What NEDs come with the container?
 
   - Example NEDs. These should be considered as examples. NEDs in the container are only used to run the simulated networks. Do not use these with real devices.
