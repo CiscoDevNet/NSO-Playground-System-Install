@@ -6,13 +6,13 @@ Explore and experiment with the world of NSO on Cisco Code Exchange, where you c
 
 But wait, there's more! You can also contribute your examples and share them with everyone. The best part is your peers can play with your examples without installing anything.
 
-If you are new to NSO, start with [NSO learning labs](https://developer.cisco.com/learning/search/?contentType=track,module,lab&keyword=nso&sortBy=luceneScore), where you will find step-by-step guides prepared by Cisco.
+If you are new to NSO, start with the [NSO Learning Labs](https://developer.cisco.com/learning/search/?contentType=track,module,lab&keyword=nso&sortBy=luceneScore), where you can find step-by-step guides.
 
 ## Variants
 
-The NSO Playground is available in **two** flavors, choose the environment that is better for you:
+Two **flavors** of the NSO Playground are available. Choose the environment that suits you best:
 
-- Local install. [See the Local Install repository for more information](https://github.com/CiscoDevNet/NSO-Playground-Local-Install)
+- Local install. [See the Local Install repository for more information.](https://github.com/CiscoDevNet/NSO-Playground-Local-Install)
 - System install. Based on the official NSO container.
   - The environment associated with this repository.
 
@@ -22,45 +22,49 @@ The rest of this guide focuses on the System Install option.
 
 ## Explore
 
-Click [here to start using Cisco Cloud IDE](https://developer.cisco.com/codeexchange/devenv/CiscoDevNet/NSO-Playground-System-Install)
+Click [here to start using Cisco Cloud IDE.](https://developer.cisco.com/codeexchange/devenv/CiscoDevNet/NSO-Playground-System-Install)
 
 Or go to [Cisco Code Exchange](https://developer.cisco.com/codeexchange/github/repo/CiscoDevNet/NSO-Playground-System-Install/) and start the environment. Click on the **Run in Cloud IDE** button on the right side of the Repo title.
 
 <img src="img/run_in_cloud_ide.png" width="1000px" height="auto" alt="Run in Cloud IDE">
 
-Once you click the **Run in Cloud IDE** button, you will see a VS Code instance prepared with the Git repo clone. **You will find your code under the ~/src directory**
+Once you click the **Run in Cloud IDE** button, a Cloud IDE instance with the Github repository appears. **You find your code under the ~/src directory.**
 
-> Note: Click on the **src** directory to expand it and see the code of the repo cloned. **Pay attention to the directory structure of the workspace.**
+**_NOTE:_** Click on the **src** directory to expand it and see the code of the repo cloned. **Pay attention to the directory structure of the workspace.**
 
 <img src="img/expand_src_dir.png" width="1000px" height="auto" alt="vscode instance">
 
 ## How can I add my own example?
 
-To create a new example, follow these steps. Please note that **you should use your own repositories.**
+To create a new example, follow these steps.
+
+**_NOTE:_** You must use your own repositories.
 
 1. Develop your example locally on your computer.
    1. You can also develop an example on the Playground, but keep in mind the guidelines, especially the 2-hour container lifespan.
 2. Push your example to the default branch of your GitHub repository.
-3. In your README.md file, specify the NSO variant (System/Local install) you used for your example.
-4. Submit your repo on <https://developer.cisco.com/codeexchange/submit/>
-5. Once your submission is approved, your repository will be featured on the [Cisco Cloud IDE](https://developer.cisco.com/codeexchange/search/?complexity=devenv)
+3. In your README.md file, specify the NSO variant (System, Local install) you used for your example.
+4. Submit your repository on <https://developer.cisco.com/codeexchange/submit/>
+5. Once your submission is approved, your repository will be featured on the [Cisco Cloud IDE.](https://developer.cisco.com/codeexchange/search/?complexity=devenv)
 6. Congratulations! You can now start exploring, playing, and sharing your awesome examples. Let your creativity flow!
 
 ## Need help?
 
-[Open an issue on the NSO Local install repository](https://github.com/CiscoDevNet/NSO-Playground-Local-Install/issues) to ask for help, share feedback or request new features.
+[You can open an issue on the NSO Local install repository](https://github.com/CiscoDevNet/NSO-Playground-Local-Install/issues) to ask for help, share feedback, or request new features.
 
 ## Need an example?
 
-Try the example below to get familiar with the Cloud IDE Environment. Copy or type the commands below into the **VS Code terminal.**
+You can try the following example to get familiar with the Cloud IDE Environment. Copy or type the next commands into the **VS Code terminal.**
 
 <img src="img/vscode_terminal.png" width="1000px" height="auto" alt="vscode terminal">
 
-Examples from the NSO example set `$NCS_DIR/examples.ncs` run with a local installation of NSO. The instructions below show how to run the example `netsim-sshkey` with an NSO system installation where NSO is already running.
+The examples that you can find from the NSO example set `$NCS_DIR/examples.ncs` run with a local installation of NSO.
 
-For a detailed explanation see the getting started guide: [Developing and Deploying a Nano Service](https://developer.cisco.com/docs/nso/guides/#!developing-and-deploying-a-nano-service/development) and the README file in `$NCS_DIR/examples.ncs/development-guide/nano-services/netsim-sshkey/`
+The following instructions show you how to run the example `netsim-sshkey` with an NSO system installation where NSO is already running.
 
-In addition, a container-based variant of the example is available in the [NSO-Developer repository](https://gitlab.com/nso-developer/nso-examples/-/tree/main/deployment/netsim-sshkey).
+For a detailed explanation see the getting started guide: [Developing and Deploying a Nano Service](https://developer.cisco.com/docs/nso/guides/#!developing-and-deploying-a-nano-service/development) and the README file in the `$NCS_DIR/examples.ncs/development-guide/nano-services/netsim-sshkey/` directory.
+
+In addition, a container-based variant of the example is available in the [NSO-Developer repository.](https://gitlab.com/nso-developer/nso-examples/-/tree/main/deployment/netsim-sshkey)
 
 1. Build the packages and copy them to the NSO run-time directory.
 
@@ -158,7 +162,7 @@ EOF
 
 ### Explore and play with the NSO Example Collection
 
-Go to `$NCS_DIR` > `examples.ncs` in the VS Code workspace or use the terminal
+Go to `$NCS_DIR` > `examples.ncs` in the VS Code workspace or use the terminal.
 
 ```bash
 cd $NCS_DIR/examples.ncs/
@@ -189,26 +193,26 @@ Go to [Cisco Code Exchange](https://developer.cisco.com/codeexchange/search/?com
 
 ## Guidelines
 
-- Code shared is public, **avoid any confidential information.**
-- NSO Playground is designed for short "_How-to_" examples. Consider the following points when creating instructions:
-  - The NSO Playground container is **ephemeral**. Any work not present in your remote GitHub repository **will be lost.**
+- **Avoid any confidential information.** When you share code, it becomes public.
+- NSO Playground is designed for short "_How-to_" examples. Consider the following points when you create instructions:
+  - The NSO Playground container is **ephemeral**. Save your work in your remote GitHub repository if you want to keep it.
     - To save your work permanently, remember to **merge** your changes in your remote GitHub repository.
-  - The container in the NSO Playground has a lifespan of **2 hours.** After 2 hours, the container will be automatically destroyed.
-    - You will be prompted to start a new session to continue working.
-    - Time starts the moment you access the URL of the NSO Playground environment.
-  - If you need to work on NSO for a longer period of time, consider using a [free NSO evaluation copy](https://developer.cisco.com/docs/nso/#!getting-and-installing-nso/download-your-nso-free-trial-installer-and-cisco-neds) or [reserve a free DevNet sandbox.](https://developer.cisco.com/site/sandbox/)
-- Only one environment at a time can be used per user logged in Code Exchange.
-  - If you open multiple environments for the same user, Code Exchange will close the oldest environment.
+  - The container in the NSO Playground has a lifespan of **2 hours.** After 2 hours, the system automatically destroys the container.
+    - The system prompts you to start a new session to continue working.
+    - Time starts the moment that you access the URL of the NSO Playground environment.
+  - If you must work on NSO for a longer time, consider using a [free NSO evaluation copy](https://developer.cisco.com/docs/nso/#!getting-and-installing-nso/download-your-nso-free-trial-installer-and-cisco-neds) or [reserve a free DevNet Sandbox.](https://developer.cisco.com/site/sandbox/)
+- You can use only one environment at a time in Code Exchange.
+  - If you open multiple environments for the same user, Code Exchange closes the oldest environment.
 
 ## Recommendations
 
 - Create examples with an "_Infrastructure as a Code_" mindset. This means everything needed to create your examples is in your GitHub repository.
-- It is recommended to avoid specifying NSO versions in the code, as the underlying NSO will be upgraded with newer releases.
+- Avoid specifying NSO versions in the code, we update the playground continuously.
 - As seen in the examples, use environment variables when developing.
-  - `$NCS_DIR` is a handy environment variable.
-  - `env | grep -i ncs` will show other environment variables available by `ncs`.
+  - `$NCS_DIR` Is a handy environment variable.
+  - `env | grep -i ncs` Shows other environment variables available by `ncs`.
 - The directory structure of the workspace matters. Consider it when creating an example.
-- Always add a README.md file to the root directory of your repository with instructions on how to setup or run your example.
+- Always add a README.md file to the root directory of your repository with instructions on how to set up or run your example.
 - Use the **preview** feature (right click) in VS Code to see the markdown files formatted.
 
    <img src="img/preview_md.png" width="1000px" height="auto" alt="markdown file">
@@ -217,19 +221,26 @@ Go to [Cisco Code Exchange](https://developer.cisco.com/codeexchange/search/?com
 
 - Where is the NSO webUI?
 
-  - Follow the steps described on [Enable the NSO webUI](webui/README.md)
+  - Follow the steps that described on [Enable the NSO webUI](webui/README.md)
 
 - Can I reset the environment?
 
-  - Yes, click on the reset button at the bottom-right corner. This will fully reset the container.
+  - Yes, click on the reset button at the bottom-right corner. This action fully resets the container.
 
       <img src="img/reset_button.png" width="100px" height="auto" alt="reset webUI">
 
-  - Be aware this will remove any work not saved on the remote GitHub repository.
+  - If you want to keep some work, make sure you save it on your remote GitHub repository first.
 
-- What NEDs come with the container?
+- How to enable the [VS Code NSO Developer Studio - Explorer?](https://marketplace.visualstudio.com/items?itemName=CiscoCrossworkNSO.nso-explorer)
 
-  - Example NEDs. These should be considered as examples. NEDs in the container are only used to run the simulated networks. Do not use these with real devices.
+  - This extension is already present on the playground.
+  - To use the extension, follow next the steps:
+    - Enable the NSO webUI and authentication. [See enable the NSO webUI](webui/README.md)
+    - Refresh the explorer extension (load icon inside the extension).
+
+- Which NEDs come with the container?
+
+  - Example NEDs, which must be considered as examples. NEDs in the container are only used to run the simulated networks. Do not use these example NEDs with real devices.
 
     ```bash
     developer:~ > ls -1 $NCS_DIR/packages/neds/
@@ -248,6 +259,6 @@ Go to [Cisco Code Exchange](https://developer.cisco.com/codeexchange/search/?com
     developer:~ >
     ```
 
-- My code is approved and already published on Cisco Code Exchange, but I don't see it?
-  - Expand the `/home/developer/src` in the workspace
-  - or do `ls -l /home/developer/src`
+- My code is approved and is already published on Cisco Code Exchange, why isn't it visible on the playground?
+  - Expand the `/home/developer/src` in the workspace.
+  - Or do: `ls -l /home/developer/src`

@@ -4,7 +4,7 @@ These steps apply for working with the NSO Playground using the system install v
 
 ### Configure ncs.conf
 
-With `nano` or `vi` edit the file `/etc/ncs/ncs.conf`
+With `nano`, or `vi` edit the file `/etc/ncs/ncs.conf`
 
 ```diff
 <webui>
@@ -20,9 +20,9 @@ With `nano` or `vi` edit the file `/etc/ncs/ncs.conf`
 </webui>
 ```
 
-Enable local authentication still in the file `/etc/ncs/ncs.conf`. You can omit this step if the user `admin` is present and has a password set.
+Enable local authentication still in the file `/etc/ncs/ncs.conf` you can omit this step if the user `admin` is present and has a password set.
 
-> **Note:** If you are working with the official NSO container, [you can create the admin user with environment variables](https://developer.cisco.com/docs/nso/guides/#!running-nso-in-containers/administration)
+**_NOTE:_** If you are working with the official NSO container, [you can create the admin user with environment variables.](https://developer.cisco.com/docs/nso/guides/#!running-nso-in-containers/administration)
 
 ```diff
 <local-authentication>
@@ -33,7 +33,7 @@ Enable local authentication still in the file `/etc/ncs/ncs.conf`. You can omit 
 
 #### CLI alternative
 
-If you prefer to update the `ncs.conf` file using the cli, use the commands below:
+If you prefer to update the `ncs.conf` file using the cli, use the following commands:
 
 Enable the webUI.
 
@@ -68,7 +68,7 @@ commit and-quit
 exit
 ```
 
-> **Note:** You can also do: `load merge terminal` then paste the contents of [webUI.cfg,](webUI.cfg) use `ctrl + d` to exit and commit the configuration pasted.
+**_NOTE:_** You can also do: `load merge terminal` then paste the contents of [webUI.cfg,](webUI.cfg) use `ctrl + d` to exit and commit the configuration pasted.
 
 #### CLI alternative
 
@@ -80,7 +80,7 @@ ncs_load -F c -lm ~/src/NSO-Playground-System-Install/webui/webUI.cfg
 
 ### Access the webUI
 
-Assuming you are using the default port 8080, the URL can be obtained through the `DEVENV_APP_8080_URL` environment variable in your terminal. The webUI default credentials are `admin/admin`
+Assuming you are using the default port 8080, you can obtain the URL from the `DEVENV_APP_8080_URL` environment variable in your terminal. The webUI default credentials are: `admin/admin`
 
 ```bash
 echo $DEVENV_APP_8080_URL
@@ -90,10 +90,10 @@ echo $DEVENV_APP_8080_URL
 
 <img src="../img/webui.png" width="1000px" height="auto" alt="webUI">
 
-If you are unsure of the port used, see the available environment variables with:
+If you're not sure which port to use, check the available environment variables with.
 
 ```bash
 env | grep -i devenv_app
 ```
 
-For more information about working with the official NSO container, take a look at <https://developer.cisco.com/docs/nso/guides/#!running-nso-in-containers>
+For more information about working with the official NSO container, look at [the NSO guide: Running NSO in containers.](https://developer.cisco.com/docs/nso/guides/#!running-nso-in-containers)
