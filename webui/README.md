@@ -22,7 +22,7 @@ With `nano`, or `vi` edit the file `/etc/ncs/ncs.conf`
 
 Enable local authentication still in the file `/etc/ncs/ncs.conf` you can omit this step if the user `admin` is present and has a password set.
 
-**_NOTE:_** If you are working with the official NSO container, [you can create the admin user with environment variables.](https://developer.cisco.com/docs/nso/guides/#!running-nso-in-containers/administration)
+> **_NOTE:_** If you are working with the official NSO container, [you can create the admin user with environment variables.](https://developer.cisco.com/docs/nso/guides/#!running-nso-in-containers/administration)
 
 ```diff
 <local-authentication>
@@ -68,7 +68,7 @@ commit and-quit
 exit
 ```
 
-**_NOTE:_** You can also do: `load merge terminal` then paste the contents of [webUI.cfg,](webUI.cfg) use `ctrl + d` to exit and commit the configuration pasted.
+> **_NOTE:_** You can also do: `load merge terminal` then paste the contents of [webUI.cfg,](webUI.cfg) use `ctrl + d` to exit and commit the configuration pasted.
 
 #### CLI alternative
 

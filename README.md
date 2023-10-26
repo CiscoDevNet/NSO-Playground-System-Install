@@ -30,7 +30,7 @@ Or go to [Cisco Code Exchange](https://developer.cisco.com/codeexchange/github/r
 
 Once you click the **Run in Cloud IDE** button, a Cloud IDE instance with the Github repository appears. **You find your code under the ~/src directory.**
 
-**_NOTE:_** Click on the **src** directory to expand it and see the code of the repo cloned. **Pay attention to the directory structure of the workspace.**
+> **_NOTE:_** Click on the **src** directory to expand it and see the code of the repo cloned. **Pay attention to the directory structure of the workspace.**
 
 <img src="img/expand_src_dir.png" width="1000px" height="auto" alt="vscode instance">
 
@@ -38,7 +38,7 @@ Once you click the **Run in Cloud IDE** button, a Cloud IDE instance with the Gi
 
 To create a new example, follow these steps.
 
-**_NOTE:_** You must use your own repositories.
+> **_NOTE:_** You must use your own repositories.
 
 1. Develop your example locally on your computer.
    1. You can also develop an example on the Playground, but keep in mind the guidelines, especially the 2-hour container lifespan.
@@ -185,7 +185,7 @@ drwxr-xr-x 1 developer ncsadmin    53 Jun 28 11:05 web-server-farm
 drwxr-xr-x 1 developer ncsadmin    31 Jun 28 11:05 web-ui
 ```
 
-**_NOTE:_** The NSO examples target Local Install and must be modified to run on a System Install. See the [NSO Getting Started Guide](https://developer.cisco.com/docs/nso/guides/#!installation/modify-examples-for-system-install) for more details.
+> **_NOTE:_** The NSO examples target Local Install and must be modified to run on a System Install. See the [NSO Getting Started Guide](https://developer.cisco.com/docs/nso/guides/#!installation/modify-examples-for-system-install) for more details.
 
 ### More Playground examples?
 
